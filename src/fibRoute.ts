@@ -1,10 +1,12 @@
 import { fibonacci } from "./fib"; // Assuming the path to fib.ts is correct
+//import statements to make sure things
 import { Request, Response } from "express";
 
 export default (req: Request, res: Response) => {
   const { num } = req.params;
   const parsedNum = parseInt(num, 10);
 
+  //making sure of no extra datatypes
   if (isNaN(parsedNum)) {
     res.status(400).send("Invalid input: 'num' should be a valid number.");
     return;
